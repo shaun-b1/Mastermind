@@ -1,1 +1,2 @@
-I am a readme file for Mastermind 
+#Mastermind
+I am a readme file for Mastermind
