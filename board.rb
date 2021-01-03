@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'colorize'
+
 # Defines all display elements of the game
 class Board
   attr_accessor :choices, :comparison, :round
@@ -31,7 +33,7 @@ class Board
   end
 
   def print_choices(number)
-    print "#{@choices[number][0]}  #{@choices[number][1]}  #{@choices[number][2]}  #{@choices[number][3]}\t\t"
+    print "#{@choices[number][0]}  #{@choices[number][1]}  #{@choices[number][2]}  #{@choices[number][3]}\t\t".colorize(:white)
   end
 
   def print_comparison(number)

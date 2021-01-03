@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'colorize'
+
 # Defines all computer functionality with the game
 class Game
   protected
@@ -31,11 +33,11 @@ class Game
     paired_array = @guess.zip(@code_to_break)
     paired_array.each do |x, y|
       if x == y
-        @comparison_array.push('!')
+        @comparison_array.push('!'.colorize(:green))
       elsif @code_to_break.include?(x)
-        @comparison_array.push('?')
+        @comparison_array.push('?'.colorize(:yellow))
       elsif x != y
-        @comparison_array.push('-')
+        @comparison_array.push('-'.colorize(:red))
       end
     end
   end
