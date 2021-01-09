@@ -6,15 +6,11 @@ require 'colorize'
 class Board
   attr_accessor :choices, :comparison, :round
 
-  protected
-
   def initialize
     @choices = []
     @comparison = []
     @round = 0
   end
-
-  public
 
   def add_to_board(guess, comparison_array)
     @choices.push(guess)
@@ -23,9 +19,8 @@ class Board
     display_board
   end
 
-  protected
-
   def display_board
+    puts "ROUND #{@round}"
     @round.times do |number|
       print_choices(number)
       print_comparison(number)
@@ -33,7 +28,7 @@ class Board
   end
 
   def print_choices(number)
-    print "#{@choices[number][0]}  #{@choices[number][1]}  #{@choices[number][2]}  #{@choices[number][3]}\t\t".colorize(:white)
+    print "#{@choices[number][0]}  #{@choices[number][1]}  #{@choices[number][2]}  #{@choices[number][3]}\t\t"
   end
 
   def print_comparison(number)
